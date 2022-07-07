@@ -1,0 +1,26 @@
+import kotlin.collections.List;
+
+CREATE TABLE Repositories_Entity (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    fullName TEXT NOT NULL,
+    description TEXT NOT NULL,
+    stargazersCount INTEGER NOT NULL,
+    language TEXT NOT NULL,
+    topics TEXT AS List<String> NOT NULL
+);
+
+insertRepository:
+INSERT OR REPLACE
+INTO Repositories_Entity(
+id,
+name,
+fullName,
+description,
+stargazersCount,
+language,
+topics
+) VALUES (?, ?, ?, ?, ?, ?, ?);
+
+getRepository:
+SELECT * FROM Repositories_Entity;
