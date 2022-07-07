@@ -1,9 +1,9 @@
 package com.czech.greytask.utils
 
+import com.czech.greytask.dataSource.models.Repositories
+import com.czech.greytask.dataSource.models.Users
 import com.czech.greytask.database.Repositories_Entity
 import com.czech.greytask.database.Users_Entity
-import com.czech.greytask.models.Repositories
-import com.czech.greytask.models.Users
 import com.squareup.sqldelight.ColumnAdapter
 
 object SQLDelightConverter {
@@ -16,6 +16,7 @@ object SQLDelightConverter {
                 databaseValue.split(",")
             }
         }
+
         override fun encode(value: List<String>): String {
             return value.joinToString(separator = ",")
         }

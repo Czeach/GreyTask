@@ -1,6 +1,6 @@
 package com.czech.greytask.dataSource.database.users
 
-import com.czech.greytask.models.Users
+import com.czech.greytask.dataSource.models.Users
 
 interface UsersCache {
 

@@ -1,13 +1,13 @@
 package com.czech.greytask.dataSource.database.users
 
+import com.czech.greytask.dataSource.models.Users
 import com.czech.greytask.database.GreyTaskDatabaseQueries
-import com.czech.greytask.models.Users
 import com.czech.greytask.utils.SQLDelightConverter.toUsersList
 import javax.inject.Inject
 
 class UsersCacheImpl @Inject constructor(
     private val queries: GreyTaskDatabaseQueries
-): UsersCache {
+) : UsersCache {
 
     override fun insertUser(data: Users.Item) {
         queries.insertUser(

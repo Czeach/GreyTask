@@ -1,14 +1,13 @@
 package com.czech.greytask.dataSource.repositories
 
 import com.czech.greytask.dataSource.database.users.UsersCache
+import com.czech.greytask.dataSource.models.Users
 import com.czech.greytask.dataSource.network.ApiService
-import com.czech.greytask.models.Users
 import com.czech.greytask.utils.states.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import java.lang.Exception
 import javax.inject.Inject
 
 class UsersRepository @Inject constructor(
@@ -35,9 +34,7 @@ class UsersRepository @Inject constructor(
                 if (networkResponse.isSuccessful && !usersList.isNullOrEmpty()) {
                     usersCache.insertUser(usersList)
 
-                    val cacheResponse = usersCache.getUsers()
-
-                    emit(DataState.data(data = cacheResponse))
+                    emit(DataState.data(data = usersList))
                 }
             } catch (e: Exception) {
                 emit(DataState.error(message = e.message.toString()))

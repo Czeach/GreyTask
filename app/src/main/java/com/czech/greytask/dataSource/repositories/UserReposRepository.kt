@@ -1,13 +1,12 @@
 package com.czech.greytask.dataSource.repositories
 
+import com.czech.greytask.dataSource.models.UserRepos
 import com.czech.greytask.dataSource.network.ApiService
-import com.czech.greytask.models.UserRepos
 import com.czech.greytask.utils.states.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import java.lang.Exception
 
 class UserReposRepository(
     private val apiService: ApiService

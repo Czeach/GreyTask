@@ -1,15 +1,11 @@
 package com.czech.greytask.viewmodels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.czech.greytask.dataSource.repositories.RepositoriesRepository
 import com.czech.greytask.dataSource.repositories.UsersRepository
-import com.czech.greytask.models.Repositories
-import com.czech.greytask.models.Users
-import com.czech.greytask.ui.repos.RepositoriesViewModel
+import com.czech.greytask.dataSource.models.Users
 import com.czech.greytask.ui.users.UsersViewModel
 import com.czech.greytask.utils.TestRule
 import com.czech.greytask.utils.states.DataState
-import com.czech.greytask.utils.states.ReposState
 import com.czech.greytask.utils.states.UsersState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.Channel

@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.czech.greytask.R
-import com.czech.greytask.models.Users
+import com.czech.greytask.dataSource.models.Users
 
-class UsersAdapter(diffCallback: UsersDiffCallback):
-    ListAdapter<Users.Item, UsersAdapter.UsersViewHolder>(diffCallback){
+class UsersAdapter(diffCallback: UsersDiffCallback) :
+    ListAdapter<Users.Item, UsersAdapter.UsersViewHolder>(diffCallback) {
 
-    class UsersViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class UsersViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val name: TextView = itemView.findViewById(R.id.fullName)
         private val type: TextView = itemView.findViewById(R.id.userName)
         private val avatar: ImageView = itemView.findViewById(R.id.userIcon)
@@ -33,7 +33,8 @@ class UsersAdapter(diffCallback: UsersDiffCallback):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UsersViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.user_list_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.user_list_item, parent, false)
 
         return UsersViewHolder(view)
     }

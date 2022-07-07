@@ -1,9 +1,9 @@
 package com.czech.greytask.dataSource.network
 
-import com.czech.greytask.models.Repositories
-import com.czech.greytask.models.UserDetails
-import com.czech.greytask.models.UserRepos
-import com.czech.greytask.models.Users
+import com.czech.greytask.dataSource.models.Repositories
+import com.czech.greytask.dataSource.models.UserDetails
+import com.czech.greytask.dataSource.models.UserRepos
+import com.czech.greytask.dataSource.models.Users
 import com.czech.greytask.utils.Constants
 import retrofit2.Response
 import retrofit2.http.GET

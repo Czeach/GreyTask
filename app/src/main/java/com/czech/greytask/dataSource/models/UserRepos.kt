@@ -1,4 +1,4 @@
-package com.czech.greytask.models
+package com.czech.greytask.dataSource.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

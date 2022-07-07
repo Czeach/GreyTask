@@ -9,8 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.czech.greytask.R
-import com.czech.greytask.databinding.FragmentHomeBinding
 import com.czech.greytask.databinding.RepositoriesFragmentBinding
 import com.czech.greytask.ui.repos.adapter.RepoDiffCallback
 import com.czech.greytask.ui.repos.adapter.ReposAdapter
@@ -42,7 +40,8 @@ class RepositoriesFragment : Fragment() {
         viewModel.getFromDatabase()
 
         binding.repoRecycler.apply {
-            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
+            layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
             adapter = repoAdapter
         }
 
@@ -53,7 +52,11 @@ class RepositoriesFragment : Fragment() {
             val query = binding.repoSearchBarEditText.text.toString()
 
             if (query.isEmpty()) {
-                Toast.makeText(requireContext(), "Please enter a repository name to search for", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter a repository name to search for",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
             viewModel.getFromNetwork(query)
@@ -71,6 +74,8 @@ class RepositoriesFragment : Fragment() {
                         binding.stateLayout.visibility = View.GONE
                     }
                     is ReposState.Error -> {
+                        binding.progressBar.visibility = View.GONE
+                        binding.stateLayout.visibility = View.VISIBLE
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                     }
                     is ReposState.Success -> {
@@ -86,6 +91,12 @@ class RepositoriesFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        viewModel.reposState.value = null
     }
 
 }

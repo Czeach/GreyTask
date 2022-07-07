@@ -2,7 +2,7 @@ package com.czech.greytask.viewmodels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.czech.greytask.dataSource.repositories.RepositoriesRepository
-import com.czech.greytask.models.Repositories
+import com.czech.greytask.dataSource.models.Repositories
 import com.czech.greytask.ui.repos.RepositoriesViewModel
 import com.czech.greytask.utils.TestRule
 import com.czech.greytask.utils.states.DataState

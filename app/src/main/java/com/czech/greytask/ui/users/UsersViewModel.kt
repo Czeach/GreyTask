@@ -3,7 +3,6 @@ package com.czech.greytask.ui.users
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.czech.greytask.dataSource.repositories.UsersRepository
-import com.czech.greytask.utils.states.ReposState
 import com.czech.greytask.utils.states.UsersState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class UsersViewModel @Inject constructor(
     private val usersRepository: UsersRepository
-): ViewModel() {
+) : ViewModel() {
 
     val usersState = MutableStateFlow<UsersState?>(null)
 

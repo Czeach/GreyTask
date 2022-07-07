@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.czech.greytask.R
-import com.czech.greytask.models.Repositories
+import com.czech.greytask.dataSource.models.Repositories
 
-class ReposAdapter(diffCallback: RepoDiffCallback):
-    ListAdapter<Repositories.Item, ReposAdapter.RepoViewHolder>(diffCallback){
+class ReposAdapter(diffCallback: RepoDiffCallback) :
+    ListAdapter<Repositories.Item, ReposAdapter.RepoViewHolder>(diffCallback) {
 
-    class RepoViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class RepoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val name: TextView = itemView.findViewById(R.id.fullName)
         private val description: TextView = itemView.findViewById(R.id.repoDesc)
         private val stars: TextView = itemView.findViewById(R.id.starNoTextView)
@@ -35,7 +35,8 @@ class ReposAdapter(diffCallback: RepoDiffCallback):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepoViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_list_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.repo_list_item, parent, false)
 
         return RepoViewHolder(view)
     }
@@ -52,7 +53,10 @@ object RepoDiffCallback : DiffUtil.ItemCallback<Repositories.Item>() {
         return oldItem == newItem
     }
 
-    override fun areContentsTheSame(oldItem: Repositories.Item, newItem: Repositories.Item): Boolean {
+    override fun areContentsTheSame(
+        oldItem: Repositories.Item,
+        newItem: Repositories.Item
+    ): Boolean {
         return oldItem.id == newItem.id
     }
 }

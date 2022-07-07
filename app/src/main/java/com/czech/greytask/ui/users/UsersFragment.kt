@@ -9,15 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.czech.greytask.R
-import com.czech.greytask.databinding.RepositoriesFragmentBinding
 import com.czech.greytask.databinding.UsersFragmentBinding
-import com.czech.greytask.ui.repos.RepositoriesViewModel
-import com.czech.greytask.ui.repos.adapter.RepoDiffCallback
-import com.czech.greytask.ui.repos.adapter.ReposAdapter
 import com.czech.greytask.ui.users.adapter.UsersAdapter
 import com.czech.greytask.ui.users.adapter.UsersDiffCallback
-import com.czech.greytask.utils.states.ReposState
 import com.czech.greytask.utils.states.UsersState
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -46,7 +40,8 @@ class UsersFragment : Fragment() {
         viewModel.getFromDatabase()
 
         binding.repoRecycler.apply {
-            layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
+            layoutManager =
+                LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
             adapter = usersAdapter
         }
 
@@ -57,7 +52,12 @@ class UsersFragment : Fragment() {
             val query = binding.userSearchBarEditText.text.toString()
 
             if (query.isEmpty()) {
-                Toast.makeText(requireContext(), "Please enter a repository name to search for", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter a valid repository name to search for",
+                    Toast.LENGTH_SHORT
+                ).show()
+                viewModel.getFromNetwork("")
             }
 
             viewModel.getFromNetwork(query)
@@ -75,7 +75,9 @@ class UsersFragment : Fragment() {
                         binding.stateLayout.visibility = View.GONE
                     }
                     is UsersState.Error -> {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        binding.progressBar.visibility = View.GONE
+                        binding.stateLayout.visibility = View.VISIBLE
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
                     }
                     is UsersState.Success -> {
                         binding.progressBar.visibility = View.GONE
@@ -90,6 +92,12 @@ class UsersFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        viewModel.usersState.value = null
     }
 
 }

@@ -1,13 +1,13 @@
 package com.czech.greytask.dataSource.database.repositories
 
+import com.czech.greytask.dataSource.models.Repositories
 import com.czech.greytask.database.GreyTaskDatabaseQueries
-import com.czech.greytask.models.Repositories
 import com.czech.greytask.utils.SQLDelightConverter.toRepositoriesList
 import javax.inject.Inject
 
 class RepositoriesCacheImpl @Inject constructor(
     private val queries: GreyTaskDatabaseQueries
-): RepositoriesCache {
+) : RepositoriesCache {
 
     override fun insertRepository(data: Repositories.Item) {
         queries.insertRepositories(

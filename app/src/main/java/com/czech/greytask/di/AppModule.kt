@@ -1,7 +1,6 @@
 package com.czech.greytask.di
 
 import android.content.Context
-import com.czech.greytask.connection.NetworkConnection
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,13 +18,5 @@ object AppModule {
         @ApplicationContext app: Context
     ): BaseApplication {
         return app as BaseApplication
-    }
-
-    @Provides
-    @Singleton
-    fun provideNetworkConnection(
-        context: BaseApplication
-    ): NetworkConnection {
-        return NetworkConnection(context)
     }
 }

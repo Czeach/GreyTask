@@ -1,6 +1,6 @@
 package com.czech.greytask.dataSource.database.repositories
 
-import com.czech.greytask.models.Repositories
+import com.czech.greytask.dataSource.models.Repositories
 
 interface RepositoriesCache {
 
