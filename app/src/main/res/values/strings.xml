@@ -2,4 +2,18 @@
     <string name="app_name">GreyTask</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="user">User</string>
+    <string name="repositories">Repositories</string>
+    <string name="search_for_repositories">Search for repositories…</string>
+    <string name="search_for_users">Search for users…</string>
+    <string name="search">Search</string>
+    <string name="empty_repo_text">Search Github for repositories, issues and pull requests!</string>
+    <string name="empty_user_text">Search Github for users</string>
+    <string name="no_repo_text">We’ve searched the ends of the earth, repository not found, please try again</string>
+    <string name="no_user_text">We’ve searched the ends of the earth and we’ve not found this user, please try again</string>
+    <string name="repo_placeholder_text">These are random words that will be replaced in due time. Config files for my github profile</string>
+    <string name="repo_placeholder_text_two">Complete framework to simplify the implementation of music commands using discord.js</string>
+    <string name="design_system">Design System</string>
+    <string name="no_repo_state">This user doesn’t have repositories yet, come back later :-)</string>
 </resources>

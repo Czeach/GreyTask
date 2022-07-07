@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserDetailFragment">
+
+    <ImageView
+        android:id="@+id/userPicture"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/user_icon" />
+
+    <TextView
+        android:id="@+id/fullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/userPicture"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Paige Brown" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/userPicture"
+        app:layout_constraintTop_toBottomOf="@id/fullName"
+        tools:text="DynamicWebPage" />
+
+    <TextView
+        android:id="@+id/userBio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userName"
+        tools:text="This is a random bio, which will be replace with actual content" />
+
+    <ImageView
+        android:id="@+id/locationIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/location_icon"
+        app:layout_constraintEnd_toStartOf="@+id/locationText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userBio" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="11dp"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/locationIcon"
+        app:layout_constraintTop_toBottomOf="@id/userBio"
+        tools:text="Lagos, Nigeria" />
+
+    <ImageView
+        android:id="@+id/linkIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:src="@drawable/link_icon"
+        app:layout_constraintStart_toEndOf="@id/locationText"
+        app:layout_constraintTop_toBottomOf="@id/userBio" />
+
+    <TextView
+        android:id="@+id/linkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="11dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/linkIcon"
+        app:layout_constraintTop_toBottomOf="@id/userBio"
+        tools:text="http://www.paige.com" />
+
+    <ImageView
+        android:id="@+id/peopleIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/people_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locationIcon" />
+
+    <TextView
+        android:id="@+id/followersTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="11dp"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/peopleIcon"
+        app:layout_constraintTop_toBottomOf="@id/locationText"
+        tools:text="400 followers  ." />
+
+    <TextView
+        android:id="@+id/followingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/followersTextView"
+        app:layout_constraintTop_toBottomOf="@id/linkText"
+        tools:text="30 following" />
+
+    <TextView
+        android:id="@+id/repoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="Repositories"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/followersTextView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="25dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="2dp"
+        android:backgroundTint="@color/grey_200"
+        android:padding="4dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/repoTextView"
+        app:layout_constraintStart_toEndOf="@id/repoTextView">
+
+        <TextView
+            android:id="@+id/repoCountTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="8sp"
+            tools:text="200" />
+
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/greyHorizontalLine"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/grey_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repoTextView" />
+
+    <View
+        android:id="@+id/blackHorizontalLine"
+        android:layout_width="93dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="23dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/repoTextView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blackHorizontalLine">
+
+        <ImageView
+            android:id="@+id/noRepoIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty_repo_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/noRepoTextView"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="@string/no_repo_state"
+            android:textColor="@color/grey"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noRepoIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/repoUserDetailRecycler"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blackHorizontalLine" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
