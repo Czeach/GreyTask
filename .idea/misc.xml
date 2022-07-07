@@ -8,6 +8,10 @@
         <entry key="app/src/main/res/drawable/users_page_icon_selector.xml" value="0.1075" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/repo_list_item.xml" value="0.43749224688555743" />
+        <entry key="app/src/main/res/layout/repositories_fragment.xml" value="0.17962962962962964" />
+        <entry key="app/src/main/res/layout/user_list_item.xml" value="0.1787037037037037" />
+        <entry key="app/src/main/res/layout/users_fragment.xml" value="0.17962962962962964" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.29635416666666664" />
       </map>
     </option>

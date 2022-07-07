@@ -48,8 +48,19 @@
                 tools:layout_editor_absoluteX="34dp"
                 tools:layout_editor_absoluteY="0dp" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <Button
-                android:id="@+id/button"
+                android:id="@+id/search_button"
                 android:layout_width="85dp"
                 android:layout_height="32dp"
                 android:layout_margin="5dp"
@@ -57,6 +68,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:text="@string/search"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textSize="11sp"
                 app:cornerRadius="3dp"
@@ -72,7 +84,6 @@
         android:id="@+id/stateLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +117,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:visibility="gone"
         android:layout_marginTop="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

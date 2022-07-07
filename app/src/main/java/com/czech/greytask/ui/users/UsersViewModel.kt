@@ -5,11 +5,13 @@ import androidx.lifecycle.viewModelScope
 import com.czech.greytask.dataSource.repositories.UsersRepository
 import com.czech.greytask.utils.states.ReposState
 import com.czech.greytask.utils.states.UsersState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class UsersViewModel @Inject constructor(
     private val usersRepository: UsersRepository
 ): ViewModel() {
@@ -23,7 +25,7 @@ class UsersViewModel @Inject constructor(
                     it.isLoading -> {
                         usersState.value = UsersState.Loading
                     }
-                    it.data.isNullOrEmpty() -> {
+                    it.data == null -> {
                         usersState.value = UsersState.Error(message = it.message.toString())
                     }
                     else -> {
@@ -43,7 +45,7 @@ class UsersViewModel @Inject constructor(
                     it.isLoading -> {
                         usersState.value = UsersState.Loading
                     }
-                    it.data.isNullOrEmpty() -> {
+                    it.data == null -> {
                         usersState.value = UsersState.Error(message = it.message.toString())
                     }
                     else -> {
