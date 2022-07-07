@@ -87,4 +87,5 @@ dependencies {
     // SQLDelight
     implementation "com.squareup.sqldelight:runtime:1.5.3"
     implementation "com.squareup.sqldelight:android-driver:1.5.3"
+    implementation("com.squareup.sqldelight:sqlite-driver:1.4.4")
 }
