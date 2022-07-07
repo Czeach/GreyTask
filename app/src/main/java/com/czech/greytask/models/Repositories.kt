@@ -11,7 +11,7 @@ data class Repositories(
     @SerialName("incomplete_results")
     val incompleteResults: Boolean?,
     @SerialName(" items")
-    val items: List<Item?>?,
+    val items: List<Item>?,
     @SerialName("message")
     val message: String?
 ) {
@@ -30,6 +30,6 @@ data class Repositories(
         @SerialName("language")
         val language: String?,
         @SerialName("topics")
-        val topics: List<String?>?,
+        val topics: List<String>?,
     )
 }

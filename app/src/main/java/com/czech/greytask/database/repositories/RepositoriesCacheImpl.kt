@@ -2,6 +2,7 @@ package com.czech.greytask.database.repositories
 
 import com.czech.greytask.database.GreyTaskDatabaseQueries
 import com.czech.greytask.models.Repositories
+import com.czech.greytask.utils.SQLDelightConverter.toRepositoriesList
 import javax.inject.Inject
 
 class RepositoriesCacheImpl @Inject constructor(
@@ -9,14 +10,24 @@ class RepositoriesCacheImpl @Inject constructor(
 ): RepositoriesCache {
 
     override fun insertRepository(data: Repositories.Item) {
-        TODO("Not yet implemented")
+        queries.insertRepositories(
+            id = data.id?.toLong(),
+            name = data.name,
+            fullName = data.fullName,
+            description = data.description,
+            stargazersCount = data.stargazersCount?.toLong(),
+            language = data.language,
+            topics = data.topics
+        )
     }
 
     override fun insertRepository(dataList: List<Repositories.Item>) {
-        TODO("Not yet implemented")
+        for (data in dataList) {
+            insertRepository(data)
+        }
     }
 
     override fun getRepositories(): List<Repositories.Item> {
-        TODO("Not yet implemented")
+        return queries.getRepositories().executeAsList().toRepositoriesList()
     }
 }

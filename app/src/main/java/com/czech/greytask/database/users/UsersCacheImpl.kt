@@ -2,6 +2,7 @@ package com.czech.greytask.database.users
 
 import com.czech.greytask.database.GreyTaskDatabaseQueries
 import com.czech.greytask.models.Users
+import com.czech.greytask.utils.SQLDelightConverter.toUsersList
 import javax.inject.Inject
 
 class UsersCacheImpl @Inject constructor(
@@ -9,14 +10,21 @@ class UsersCacheImpl @Inject constructor(
 ): UsersCache {
 
     override fun insertUser(data: Users.Item) {
-        TODO("Not yet implemented")
+        queries.insertUser(
+            id = data.id?.toLong(),
+            login = data.login,
+            avatarUrl = data.avatarUrl,
+            type = data.type
+        )
     }
 
     override fun insertUser(dataList: List<Users.Item>) {
-        TODO("Not yet implemented")
+        for (data in dataList) {
+            insertUser(data)
+        }
     }
 
     override fun getUsers(): List<Users.Item> {
-        TODO("Not yet implemented")
+        return queries.getUsers().executeAsList().toUsersList()
     }
 }

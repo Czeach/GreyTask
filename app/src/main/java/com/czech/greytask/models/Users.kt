@@ -11,7 +11,7 @@ data class Users(
     @SerialName("incomplete_results")
     val incompleteResults: Boolean?,
     @SerialName("items")
-    val items: List<Item?>?,
+    val items: List<Item>?,
     @SerialName("message")
     val message: String?
 ) {

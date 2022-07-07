@@ -1,10 +1,10 @@
 import kotlin.collections.List;
 
 CREATE TABLE Users_Entity (
-    id INTEGER NOT NULL PRIMARY KEY,
-    login TEXT NOT NULL,
-    avatarUrl TEXT NOT NULL,
-    type TEXT NOT NULL
+    id INTEGER PRIMARY KEY,
+    login TEXT,
+    avatarUrl TEXT,
+    type TEXT
 );
 
 insertUser:
@@ -22,13 +22,13 @@ SELECT * FROM Users_Entity;
 
 
 CREATE TABLE Repositories_Entity (
-    id INTEGER NOT NULL PRIMARY KEY,
-    name TEXT NOT NULL,
-    fullName TEXT NOT NULL,
-    description TEXT NOT NULL,
-    stargazersCount INTEGER NOT NULL,
-    language TEXT NOT NULL,
-    topics TEXT AS List<String> NOT NULL
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    fullName TEXT,
+    description TEXT,
+    stargazersCount INTEGER,
+    language TEXT,
+    topics TEXT AS List<String>
 );
 
 insertRepositories:
