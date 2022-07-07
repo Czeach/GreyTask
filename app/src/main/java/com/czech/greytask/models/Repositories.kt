@@ -10,7 +10,7 @@ data class Repositories(
     val totalCount: Int?,
     @SerialName("incomplete_results")
     val incompleteResults: Boolean?,
-    @SerialName("items")
+    @SerialName(" items")
     val items: List<Item?>?,
     @SerialName("message")
     val message: String?

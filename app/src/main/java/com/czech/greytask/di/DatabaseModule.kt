@@ -1,10 +1,13 @@
 package com.czech.greytask.di
 
 import com.czech.greytask.Database
-import com.czech.greytask.database.repositories.ReposDatabaseFactory
-import com.czech.greytask.database.repositories.ReposDriverFactory
-import com.czech.greytask.database.users.UsersDatabaseFactory
-import com.czech.greytask.database.users.UsersDriverFactory
+import com.czech.greytask.database.DriverFactory
+import com.czech.greytask.database.GreyTaskDatabaseFactory
+import com.czech.greytask.database.GreyTaskDatabaseQueries
+import com.czech.greytask.database.repositories.RepositoriesCache
+import com.czech.greytask.database.repositories.RepositoriesCacheImpl
+import com.czech.greytask.database.users.UsersCache
+import com.czech.greytask.database.users.UsersCacheImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,21 +20,40 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideRepositoriesDatabase(
+    fun provideDatabase(
         context: BaseApplication
     ): Database {
-        return ReposDatabaseFactory(
-            driverFactory = ReposDriverFactory(context = context)
+        return GreyTaskDatabaseFactory(
+            driverFactory = DriverFactory(context = context)
         ).createDriver()
     }
 
     @Provides
     @Singleton
-    fun provideUsersDatabase(
-        context: BaseApplication
-    ): Database {
-        return UsersDatabaseFactory(
-            driverFactory = UsersDriverFactory(context = context)
-        ).createDriver()
+    fun provideQueries(
+        database: Database
+    ): GreyTaskDatabaseQueries {
+        return database.greyTaskDatabaseQueries
     }
+
+    @Provides
+    @Singleton
+    fun provideRepositoriesCache(
+        queries: GreyTaskDatabaseQueries
+    ): RepositoriesCache {
+        return RepositoriesCacheImpl(
+            queries = queries
+        )
+    }
+
+    @Provides
+    @Singleton
+    fun provideUsersCache(
+        queries: GreyTaskDatabaseQueries
+    ): UsersCache {
+        return UsersCacheImpl(
+            queries = queries
+        )
+    }
+
 }

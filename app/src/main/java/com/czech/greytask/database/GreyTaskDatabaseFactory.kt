@@ -1,10 +1,9 @@
-package com.czech.greytask.database.users
+package com.czech.greytask.database
 
 import com.czech.greytask.Database
-import com.czech.greytask.database.Repositories_Entity
 import com.czech.greytask.utils.SQLDelightConverter
 
-class UsersDatabaseFactory(private val driverFactory: UsersDriverFactory) {
+class GreyTaskDatabaseFactory(private val driverFactory: DriverFactory) {
 
     fun createDriver(): Database {
         return Database(

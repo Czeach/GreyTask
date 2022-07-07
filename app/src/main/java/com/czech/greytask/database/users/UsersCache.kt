@@ -4,9 +4,9 @@ import com.czech.greytask.models.Users
 
 interface UsersCache {
 
-    fun insertRepository(data: Users.Item)
+    fun insertUser(data: Users.Item)
 
-    fun insertRepository(dataList: List<Users.Item>)
+    fun insertUser(dataList: List<Users.Item>)
 
-    fun getRepository(): List<Users.Item>
+    fun getUsers(): List<Users.Item>
 }

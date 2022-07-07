@@ -1,5 +1,26 @@
 import kotlin.collections.List;
 
+CREATE TABLE Users_Entity (
+    id INTEGER NOT NULL PRIMARY KEY,
+    login TEXT NOT NULL,
+    avatarUrl TEXT NOT NULL,
+    type TEXT NOT NULL
+);
+
+insertUser:
+INSERT OR REPLACE
+INTO Users_Entity(
+id,
+login,
+avatarUrl,
+type
+) VALUES (?, ?, ?, ?);
+
+getUsers:
+SELECT * FROM Users_Entity;
+
+
+
 CREATE TABLE Repositories_Entity (
     id INTEGER NOT NULL PRIMARY KEY,
     name TEXT NOT NULL,
@@ -10,7 +31,7 @@ CREATE TABLE Repositories_Entity (
     topics TEXT AS List<String> NOT NULL
 );
 
-insertRepository:
+insertRepositories:
 INSERT OR REPLACE
 INTO Repositories_Entity(
 id,
@@ -22,5 +43,6 @@ language,
 topics
 ) VALUES (?, ?, ?, ?, ?, ?, ?);
 
-getRepository:
-SELECT * FROM Repositories_Entity;
+
+getRepositories:
+SELECT *FROM Repositories_Entity;
