@@ -3,7 +3,7 @@ package com.czech.greytask.dataSource.repositories
 import com.czech.greytask.dataSource.database.users.UsersCache
 import com.czech.greytask.dataSource.network.ApiService
 import com.czech.greytask.models.Users
-import com.czech.greytask.utils.DataState
+import com.czech.greytask.utils.states.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

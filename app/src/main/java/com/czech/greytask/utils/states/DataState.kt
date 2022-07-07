@@ -1,4 +1,4 @@
-package com.czech.greytask.utils
+package com.czech.greytask.utils.states
 
 data class DataState<T>(
     val message: String? = null,
