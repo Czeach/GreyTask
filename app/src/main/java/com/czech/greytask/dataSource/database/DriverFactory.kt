@@ -1,4 +1,4 @@
-package com.czech.greytask.database
+package com.czech.greytask.dataSource.database
 
 import android.content.Context
 import com.czech.greytask.Database

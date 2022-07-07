@@ -8,7 +8,7 @@ object Constants {
 
     const val SEARCH_USERS = "search/users"
 
-    const val GET_USER = "users/{username}"
+    const val GET_USER_DETAILS = "users/{username}"
 
-    const val GET_USER_Repos = "users/{username}/repos"
+    const val GET_USER_REPOS = "users/{username}/repos"
 }

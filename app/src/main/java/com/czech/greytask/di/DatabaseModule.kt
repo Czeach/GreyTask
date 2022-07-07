@@ -1,13 +1,13 @@
 package com.czech.greytask.di
 
 import com.czech.greytask.Database
-import com.czech.greytask.database.DriverFactory
-import com.czech.greytask.database.GreyTaskDatabaseFactory
+import com.czech.greytask.dataSource.database.DriverFactory
+import com.czech.greytask.dataSource.database.GreyTaskDatabaseFactory
 import com.czech.greytask.database.GreyTaskDatabaseQueries
-import com.czech.greytask.database.repositories.RepositoriesCache
-import com.czech.greytask.database.repositories.RepositoriesCacheImpl
-import com.czech.greytask.database.users.UsersCache
-import com.czech.greytask.database.users.UsersCacheImpl
+import com.czech.greytask.dataSource.database.repositories.RepositoriesCache
+import com.czech.greytask.dataSource.database.repositories.RepositoriesCacheImpl
+import com.czech.greytask.dataSource.database.users.UsersCache
+import com.czech.greytask.dataSource.database.users.UsersCacheImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

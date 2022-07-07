@@ -1,4 +1,4 @@
-package com.czech.greytask.database.repositories
+package com.czech.greytask.dataSource.database.repositories
 
 import com.czech.greytask.database.GreyTaskDatabaseQueries
 import com.czech.greytask.models.Repositories

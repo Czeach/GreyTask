@@ -1,5 +1,6 @@
 package com.czech.greytask.di
 
+import com.czech.greytask.dataSource.network.ApiService
 import com.czech.greytask.utils.Constants
 import dagger.Module
 import dagger.Provides
@@ -47,5 +48,13 @@ object NetworkModule {
             .baseUrl(Constants.BASE_URL)
             .client(okHttpClient)
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiService(
+        retrofit: Retrofit
+    ): ApiService {
+        return retrofit.create(ApiService::class.java)
     }
 }

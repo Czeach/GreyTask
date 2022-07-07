@@ -1,4 +1,4 @@
-package com.czech.greytask.database.users
+package com.czech.greytask.dataSource.database.users
 
 import com.czech.greytask.database.GreyTaskDatabaseQueries
 import com.czech.greytask.models.Users
