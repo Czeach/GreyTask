@@ -43,6 +43,5 @@ language,
 topics
 ) VALUES (?, ?, ?, ?, ?, ?, ?);
 
-
 getRepositories:
 SELECT *FROM Repositories_Entity;
